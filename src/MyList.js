@@ -26,11 +26,18 @@ class MyList extends Component {
   this.setState({toDoItemArray: toDos, newItem: ''})
 }
 
+clearList(e){
+  this.setState = {
+    toDoItemArray:[]
+  }
+
+}
+
 
 
   render() {
     let todoItems = this.state.toDoItemArray.map( (item, index) => (
-         <ListItem doThis={item} key={index}/>
+         <ListItem doThis={item} num={index}/>
     ))
 
 
@@ -44,8 +51,9 @@ class MyList extends Component {
       </ul>
 
       <form>
-      <input type='text' placeholder='type an item here'onChange={(e) => this.newItemChange(e)} value={this.state.newItem}/>
-      <button onClick={(e) => this.addItem(e)}>Add it!</button>
+      <input type='text' placeholder='new to do'onChange={(e) => this.newItemChange(e)} value={this.state.newItem}/>
+      <button onClick={(e) => this.addItem(e)}>Add!</button>
+      <button onClick={(e) => this.clearList(e)}>Clear!</button>
       </form>
 
       </div>
