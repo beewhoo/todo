@@ -5,4 +5,4 @@ import MyList from './MyList';
 
 var toDos = ['Buy ice cream', 'Eat ice cream', 'Go to the gym' ]
 
-ReactDOM.render(<MyList list={toDos}/>, document.getElementById('root'));
+ReactDOM.render(<MyList theList={toDos}/>, document.getElementById('root'));
