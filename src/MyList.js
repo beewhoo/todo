@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ListItem from './ListItem.js'
+import ListItem from './ListItem';
+import ToDoList from './ToDoList';
 
 class MyList extends Component {
 
@@ -36,9 +37,7 @@ clearList(e){
 
 
   render() {
-    let todoItems = this.state.toDoItemArray.map( (item, index) => (
-         <ListItem doThis={item} num={index}/>
-    ))
+  
 
 
 
@@ -47,7 +46,7 @@ clearList(e){
       <h1> Things I should stop procastinating: </h1>
 
       <ul>
-        {todoItems}
+        <ToDoList toDoItemArray={this.state.toDoItemArray} />
       </ul>
 
       <form>
